@@ -22,5 +22,6 @@ public class App {
         Cat bean4 =
                 (Cat) applicationContext.getBean("cat");
         System.out.println(bean4.getMessage());
+        System.out.println(bean4.equals(bean3));
     }
 }
