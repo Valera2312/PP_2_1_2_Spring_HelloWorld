@@ -1,3 +1,5 @@
+import Models.Cat;
+import Models.HelloWorld;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -8,5 +10,17 @@ public class App {
         HelloWorld bean =
                 (HelloWorld) applicationContext.getBean("helloworld");
         System.out.println(bean.getMessage());
+        bean.setMessage("Hello");
+        HelloWorld bean2 =
+                (HelloWorld) applicationContext.getBean("helloworld");
+        System.out.println(bean2.getMessage());
+        System.out.println(bean.equals(bean2));
+
+        Cat bean3 =
+                (Cat) applicationContext.getBean("cat");
+        bean3.setMessage("cat");
+        Cat bean4 =
+                (Cat) applicationContext.getBean("cat");
+        System.out.println(bean4.getMessage());
     }
 }
